@@ -1,15 +1,36 @@
 # DINEFINDER
 
+---
 
-## Brief Project Description
-DineFinder is a web application designed to enhance dining experiences by helping users discover restaurants effortlessly. With features like restaurant search and filtering, detailed listings, user reviews, and seamless navigation, it consolidates essential information into one platform, making dining decisions easier.
+## Overview
+
+DineFinder is a web-based application designed to enhance dining experiences by helping users discover restaurants effortlessly. With features like user authentication, database storage, and dynamic rendering of content. This enable user to search and filtering for there choice of restaurants, detailed listings, user reviews, and seamless navigation of restaurants, it consolidates essential information into one platform, making dining decisions easier.The project demonstrates proficiency in Front-end  development and serves as a showcase of Full Stack Software Engineering skills.
+
+--- 
+
+## Technologies Used
+The Dinfinder App project utilized the following technologies and tools.
 
 
-## Setup Instructions
+* **MysQl:** A relational database management system used for storing user data a
+* **JavaScript:** Used for client-side scripting and dynamic interactions.
+* **Node.js:** A fast, small, and feature-rich JavaScript library for simplifying client-side scripting.
+* **HTML:** The standard markup language for creating web pages and applications.
+* **CSS:** Cascading Style Sheets for styling HTML elements and enhancing the visual presentation.
+* **Git:** A version control system for tracking changes in the project codebase.
+* **GitHub:** A platform for hosting and collaborating on Git repositories.
+
+These technologies collectively enable the development of a robust and user-friendly web application for managing notes effectively.
+
+
+
+---
+
+## Getting Started
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/YourGitHubUsername/DineFinder.git
+   git clone https://github.com/AbdulTechX/Dinerfinder
    ```
 
 2. **Navigate to the Project Directory:**
@@ -57,19 +78,12 @@ DineFinder is a web application designed to enhance dining experiences by helpin
 5. **Access the Application:**
    - Open your browser and navigate to `http://localhost:3000`.
 
-## Technologies Used
-
-- **Frontend:** React, React-Select
-- **Backend:** Node.js, Express
-- **Database:** MySQL
-- **APIs:** Google Maps API, Google Places API
-- **Additional Tools:**
-  - Lazy loading for optimized image performance
-  - Responsive design for mobile compatibility
-
 ---
 
-## Features of DineFinder
+
+## Usage
+Once the application is running, you can access it in your web browser. Here are some key features:
+
 
 1. **Restaurant Discovery:**
    - Search and filter restaurants by cuisine, location, price range, and ratings.
@@ -83,6 +97,10 @@ DineFinder is a web application designed to enhance dining experiences by helpin
 4. **Responsive Design:**
    - Optimized for seamless use across various devices.
 
+5. **User Aunthentication**
+   - Login page
+   - logout page
+   - sign out
 ---
 
 ## Link to the Deployed Web App
@@ -112,4 +130,10 @@ We welcome contributions to make DineFinder even better! Follow these steps to c
 For significant changes, please open an issue first to discuss what you would like to change.
 
 ---
- 
+# Author :pen:
+
+[Abdulazeez Buhari ] (https://github.com/AbdulTechX/Dinerfinder)
+
+[linkedin](https://www.linkedin.com/in/abdulazeez-buhari-823969270?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BBty0KJWyStadA5YSoOUEBg%3D%3D)
+
+[Twitter] (https://x.com/AbdulTechX) 
