@@ -1,38 +1,703 @@
-.App {
+/* stylying */
+.login-form p, .register-form  p {
+  font-size: 0.9rem;
+  margin-top: 1px;
+  margin-bottom: 30px;
+  text-align: center;
+
+}
+.form-group p {
+  color: red;
+  font-size: 0.875rem;
+  text-align: left;
+  margin: 0.25rem 0 0;
+  
+}
+.restaurant-info p {
+  margin: 10px 0;
+}
+.blog-about h1 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.blog-about p, .review-highlight p{
+  font-size: 16px;
+  color:white;
+  line-height: 1.6;
+}
+.review-container h2{
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+.featured-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+  margin-top: 250px;
+}
+.restaurant-card-content h4 {
+  font-size: 1.7rem;
+  margin: 0 0 5px 0;
+}
+
+.restaurant-card-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+.restaurant-header h4 {
+  color: #FFBF00;
+  font-size: 1.5rem;
+}
+.restaurant-details-page h1, .restaurant-address {
+  color: #e0c200;
+  font-weight: bold;
+}
+.rating-category h3 {
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Full-page Background Page with gradient */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.full-page-container {
+  background-image: linear-gradient(
+    to bottom, /* Fades from top to bottom */
+    rgba(0, 0, 0, 0.6), /* Darker at the top for better text contrast */
+    rgba(0, 0, 0, 0.3), /* Semi-transparent in the middle */
+    rgba(0, 0, 0, 0.8) /* Darker again at the bottom */
+),url(../public/images/dan-gold-E6HjQaB7UEA-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps background static on scroll */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Navbar styles */
+
+nav {
+  background-color: #8A9A5B;
+  height: 50px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #FFBF00;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin-right: 20px;
+}
+/* hero section */
+
+.body-page {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    text-align: center;
+    padding: 50px 20px;
+}
+.body-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* Search */
+.search-form {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.search-input {
+  width: 200px;
+  height: 38px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensures consistent box model */
+}
+.location-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.location-icon {
+  position: absolute;
+  left: 8px;
+  font-size: 16px;
+  color: #aaa;
+}
+.search-icon {
+  position: absolute;
+  left: 8px;
+  font-size: 16px;
+  color: #aaa;
+}
+.location-container .search-input {
+  padding-left: 30px;
+}
+/* Footer styling */
+
+.footer {
+  background-color: #353935;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 0.9rem;
+  margin-top: auto; /* psuh footer to the bottom */
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.footer-links li {
+  margin: 0;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #FFD700; /* Gold hover color */
+}
+
+/* Login Styling */
+
+.login-form, .register-form  {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #E5E4E2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form input, .register-form input, .profile-form input{
+  width: 375px;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.login-form input:focus {
+  outline: none;
+  border: 2px solid #FFD700; /* Gold border on focus */
+}
+
+.login-form label, .register-form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #333;
+  transition: 0.2s;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Ensures labels and inputs are aligned properly */
+  margin-bottom: 1rem;
+}
+
+
+.success {
+  color: green;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.signup-prompt {
+  margin-top: 15px;
+  text-align: center;
+
+}
+.signup-prompt a {
+  color: #e0c200;
+  text-decoration: none;
+
+}
+.signup-prompt a:hover {
+  text-decoration: underline; /* Add an underline on hover */
+}
+/* profile-page */
+.profile {
+  margin: 40px auto;
+}
+.profile-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* Space between the logo and form */
+}
+
+.profile-logo {
+  width: 200px; /* Adjust as needed */
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures image fits inside circle */
+  border: 2px solid #e0c200; /* Optional border */
+}
+
+.profile-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures proper scaling */
+}
+.profile-page {
+  width: 400px;
+  margin: 70px auto;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #E5E4E2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-group-readonly input[readonly] {
+  background-color: #f9f9f9;
+  color: #888;
+  cursor: not-allowed;
+}
+.featured-container {
+  padding: 40px;
+  margin-top: 200px;
+  background-color: #D9DCC3;
+  text-align: center;
+  position: relative;
+}
+.blog-about{
+  border: #ccc;
+  background-color: #8A9A5B;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+  border-radius: 10px;
+  position: absolute;
+  padding: 20px;
+  margin: 0px 70px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  top: -50px;
+
+}
+/* General container for the Restaurant Details Pages */
+.restaurant-details-background{
+  background-color: #D9DCC3;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps background static on scroll */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant-details-page{
+  align-items: center;
+  margin: -10px 80px 4px;
+}
+.header-section{
+  display: grid;
+  grid-template-columns: 66% 34%; /* Two equal columns */
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  
+}
+.header-body{
+  background-color: #8A9A5B;
+  border-radius: 15px;
+  padding: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.details-review-page{
+  background-color: #8A9A5B;
+  border-radius: 15px;
+  padding: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+.details-page-image {
+  width: 100%;
+  max-width: 280px; 
+  height: 400px; 
+  object-fit: cover; 
+  object-position: center; 
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.restaurant-images-swiper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px; /* Move dots below the image */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff; /* Style for the pagination dots */
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+.opening-hours {
+  color: white; 
+  padding: 10px;
+  word-wrap: break-word; /* Break long words */
+  font-size: 15px; 
+}
+
+.opening-hours h2 {
+  padding-bottom: 5px; 
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.opening-hours ul {
+  list-style: none; 
+  padding: 0; 
+  margin-bottom: 40px;
+}
+
+.opening-hours li {
+  border-bottom: 1px solid #aaa; 
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  overflow: hidden; /* Hide overflow text */
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+.cuisine-icon {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.restaurant-cuisine {
+  font-size: 1.1rem;
+  color: #555;
+}
+.restaurant-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.restaurant-card {
+    position: relative; /* Allows layering of content above background */
+    border-radius: 15px;
+    border: #8A9A5B solid 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 230px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.restaurant-card-content {
+  position: absolute;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: 2; /* Above the overlay */
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  width: calc(100% - 30px);
+}
+.restaurant-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  z-index: 0; 
+}
+.restaurant-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6), /* Darker at the top */
+      rgba(0, 0, 0, 0.3) /* Lighter at the bottom */
+  );
+  z-index: 1; /* Ensure it layers above the image */
+}
+.review-image{
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+.restaurant-card-content {
+  position: relative;
+  padding: 20px;
+  z-index: 1; /* Ensures content stays above background */
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlighted Review Section */
+.review-container {
+  background-color: #E5E4E2
+
+}
+.review-highlight {
+  background-color: #8A9A5B; /* Light yellow background */
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: #ccc;
+  margin: 0px 70px;
+  margin-bottom: 30px;
+}
+
+.review-card {
+  flex-direction: column;
+  display: flex;
+  background: #8A9A5B;
+  border-radius: 10px;
+  border: 10px #8A9A5B solid;
+  text-align: left;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  color: white; 
+  width: 270px;
+  max-height: 650px;
+  margin-bottom: 30px;
+  
+}
+.rating-bar-container {
+  margin-bottom: 12px;
+}
+
+.rating-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rating-label {
+  flex-grow: 1;
+  text-align: left;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.rating-value {
+  text-align: right;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rating-bar {
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating-bar-filled {
+  height: 100%;
+  background-color: #FFD700;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.restaurant-card-content {
+  padding: 1rem;
+}
+/* button hover */
+
+.view-detail-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #6F725D;;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 200px;
+}
+.review-highlight .view-detail-btn{
+  width: 400px;
+}
+.view-detail-btn:hover, .search-button:hover  {
+  background-color: #4B4E3E;
+}
+.add-details-review {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 15px 0; 
+  display: block;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.add-review {
+  color: #FFD700;;
+  background-color: #8A9A5B;
+  padding: 10px 20px;
+  border: #FFD700 solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+  width: 200px;
+}
+.add-review:hover {
+  background-color:#FFD700;
+}
+
+nav a, nav button {
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+}
+nav button:hover, nav a:hover {
+  text-decoration: solid;
+  color: #FFBF00;
+}
+.search-button {
+  width: 150px;
+  background-color: #e0c200;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.click {
+  background-color: #e0c200;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.click:hover {
+  background-color: #CC7722; /* Slightly darker gold on hover */
+}
+.password-container  {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  color: black;
+  right: 1px;
+  top: 30%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.white-label {
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  display: block;
+  margin: 20px 0 15px;
+  font-family: Arial, sans-serif;
+}
+.button-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.button-group a {
+  margin-left: 10px;
+  color: #FFBF00;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: #ddd;
+}
+.review-group input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
 }
