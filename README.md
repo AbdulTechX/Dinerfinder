@@ -68,7 +68,8 @@ These technologies collectively enable the development of a robust and user-frie
      ```
    - Install dependencies:
      ```bash
-     npm install
+     npm install react-router-dom react-google-autocomplete react-select react-icons swiper react-compound-slider @fortawesome/fontawesome-free
+
      ```
    - Start the frontend server:
      ```bash
