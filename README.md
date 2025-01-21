@@ -14,13 +14,13 @@ The Dinfinder App project utilized the following technologies and tools.
 
 * **MysQl:** A relational database management system used for storing user data a
 * **JavaScript:** Used for client-side scripting and dynamic interactions.
-* **Node.js:** A fast, small, and feature-rich JavaScript library for simplifying client-side scripting.
+* **React / Node.js:** A fast, small, and feature-rich JavaScript library for simplifying client-side scripting.
 * **HTML:** The standard markup language for creating web pages and applications.
 * **CSS:** Cascading Style Sheets for styling HTML elements and enhancing the visual presentation.
 * **Git:** A version control system for tracking changes in the project codebase.
 * **GitHub:** A platform for hosting and collaborating on Git repositories.
 
-These technologies collectively enable the development of a robust and user-friendly web application for managing notes effectively.
+These technologies collectively enable the development of a robust and user-friendly web application for restaurant search  effectively.
 
 
 
@@ -68,7 +68,7 @@ These technologies collectively enable the development of a robust and user-frie
      ```
    - Install dependencies:
      ```bash
-     npm install react-router-dom react-google-autocomplete react-select react-icons swiper react-compound-slider @fortawesome/fontawesome-free
+     npm install react-router-dom react-google-autocomplete react-select react-icons swiper react-compound-slider @fortawesome/fontawesome-free  cors express-validator jsonwebtoken
 
      ```
    - Start the frontend server:
