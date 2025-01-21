@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Define the API base URL
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 'https://dinerfinder.onrender.com';
 
 // Create an Axios instance with interceptors
 const apiClient = axios.create({
