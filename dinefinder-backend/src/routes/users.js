@@ -48,4 +48,28 @@ router.post('/register',
             });
         });
     });
+// Login endpoint
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    // Check if the user exists in the database
+    db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
+        if (err) {
+            return res.status(500).json({ message: 'Database error.' });
+        }
+        if (results.length === 0) {
+            return res.status(400).json({ message: 'Invalid email or password.' });
+        }
+
+        const user = results[0];
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(400).json({ message: 'Invalid email or password.' });
+        }
+
+        const token = generateToken(user);
+        res.json({ message: 'Login successful!', token });
+    });
+});
 
