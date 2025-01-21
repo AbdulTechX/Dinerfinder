@@ -106,3 +106,44 @@ router.get('/profile', (req, res) => {
     }
 });
 
+// Update user profile
+router.put('/profile', async (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+        return res.status(401).json({ message: 'Authorization header is required.' });
+    }
+
+    const token = authHeader.split(' ')[1];
+    try {
+        // Verify the token and get the user's ID from the token
+        const decoded = jwt.verify(token, JWT_SECRET);
+
+        // Get the updated username and phone from the request body
+        const { username, phone } = req.body;
+
+        // Only proceed if there are changes to update
+        if (!username && !phone) {
+            return res.status(400).json({ message: 'No data to update.' });
+        }
+
+        // Build the SQL query and parameters for updating
+        const updateQuery = 'UPDATE users SET username = ?, phone = ? WHERE id = ?';
+        const params = [username, phone, decoded.id];
+
+        // Execute the update query in the database
+        db.query(updateQuery, params, (err, results) => {
+            if (err) {
+                return res.status(500).json({ message: 'Database error.' });
+            }
+            // Check if the user was found and updated
+            if (results.affectedRows === 0) {
+                return res.status(404).json({ message: 'User not found.' });
+            }
+            res.json({ message: 'Profile updated successfully!' });
+        });
+    } catch (error) {
+        res.status(401).json({ message: 'Invalid or expired token.' });
+    }
+});
+
+module.exports = { router };
