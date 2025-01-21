@@ -73,3 +73,36 @@ router.post('/login', async (req, res) => {
     });
 });
 
+
+// Get user profile
+router.get('/profile', (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+        return res.status(401).json({ message: 'Authorization header is required.' });
+    }
+
+    const token = authHeader.split(' ')[1];
+    console.log('Received Token:', token);
+
+    try {
+        const decoded = jwt.verify(token, JWT_SECRET);
+        console.log('Decoded Token:', decoded);
+
+        db.query('SELECT * FROM users WHERE id = ?', [decoded.id], (err, results) => {
+            if (err) {
+                console.error('Database Error:', err);
+                return res.status(500).json({ message: 'Database error.' });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ message: 'User not found.' });
+            }
+
+            const user = results[0];
+            res.json({ username: user.username, email: user.email, phone: user.phone || '' });
+        });
+    } catch (error) {
+        console.error('JWT Error:', error.message);
+        res.status(401).json({ message: 'Invalid or expired token.' });
+    }
+});
+
